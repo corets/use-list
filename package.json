@@ -36,7 +36,7 @@
     "react-dom": "^16.13.0"
   },
   "dependencies": {
-    "@corets/list": "^0.0.1-4",
+    "@corets/list": "^0.0.1-7",
     "lodash-es": "^4.17.20"
   },
   "devDependencies": {

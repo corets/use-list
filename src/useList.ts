@@ -8,7 +8,7 @@ export const useList: UseList = <TState>(initialState) => {
   const [reference, setReference] = useState(0)
 
   useEffect(() => {
-    return list.listen(() => setReference((previous) => previous + 1), false)
+    return list.listen(() => setReference((previous) => previous + 1))
   }, [])
 
   return list
