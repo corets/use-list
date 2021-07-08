@@ -97,46 +97,22 @@ describe("useList", () => {
     expect(sharedList.get()).toEqual(["bar", "baz", "yolo"])
     expect(renders).toBe(3)
 
-    act(() => receivedList.reset())
+    act(() => sharedList.set(["foo"]))
 
     expect(target().text()).toBe("foo")
     expect(sharedList.get()).toEqual(["foo"])
     expect(renders).toBe(4)
 
-    act(() => receivedList.reset(["bar", "baz"]))
-
-    expect(target().text()).toBe("bar")
-    expect(sharedList.get()).toEqual(["bar", "baz"])
-    expect(renders).toBe(5)
-
-    act(() => sharedList.set(["foo"]))
-
-    expect(target().text()).toBe("foo")
-    expect(sharedList.get()).toEqual(["foo"])
-    expect(renders).toBe(6)
-
     act(() => sharedList.set(["foo", "bar"]))
 
     expect(target().text()).toBe("foo")
     expect(sharedList.get()).toEqual(["foo", "bar"])
-    expect(renders).toBe(7)
+    expect(renders).toBe(5)
 
     act(() => sharedList.add("yolo"))
 
     expect(target().text()).toBe("foo")
     expect(sharedList.get()).toEqual(["foo", "bar", "yolo"])
-    expect(renders).toBe(8)
-
-    act(() => sharedList.reset())
-
-    expect(target().text()).toBe("bar")
-    expect(sharedList.get()).toEqual(["bar", "baz"])
-    expect(renders).toBe(9)
-
-    act(() => sharedList.reset(["bar", "baz"]))
-
-    expect(target().text()).toBe("bar")
-    expect(sharedList.get()).toEqual(["bar", "baz"])
-    expect(renders).toBe(9)
+    expect(renders).toBe(6)
   })
 })
