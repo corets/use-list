@@ -1,4 +1,4 @@
-import { isFunction } from "lodash-es"
+import { isFunction } from "lodash"
 import { ListInitializer } from "./types"
 import { createList, List, ObservableList } from "@corets/list"
 
